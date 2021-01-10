@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='NetconfConfigurationManager',
+    name='yanccm',
     packages=[
         'controller',
         'sot',
@@ -12,18 +12,21 @@ setup(
         'view'],
     version='0.0.1',
     license='MIT',
-    description='Netconf Configuration Manager is multithreaded configuration manger for network devices that '
-                'leverages the Netconf protocol',
+    description='''YANCCM (pronounced yank'em) - Yet Another Network Configuration and Change Managment tool, is 
+    multi-threaded configuration manger for network devices that leverages the NETCONF protocol''',
     author='Richard Cunningham',
     author_email='cunningr@gmail.com',
-    url='https://github.com/cunningr/dna_workflows',
-    download_url='https://github.com/cunningr/dna_workflows',
+    url='https://github.com/cunningr/yanccm',
+    download_url='https://github.com/cunningr/yanccm',
     keywords=['Netconf', 'Cisco', 'configuration management'],
     install_requires=[
         'ncclient',
         'lxml',
         'pyyaml',
-        'pymongo'
+        'pymongo',
+        'tabulate',
+        'requests',
+        'jinja2'
     ],
     classifiers=[
         'Development Status :: 3 - Alpha',

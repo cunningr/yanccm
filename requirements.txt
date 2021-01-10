@@ -2,3 +2,6 @@ ncclient
 lxml
 pyyaml
 pymongo
+tabulate
+requests
+jinja2
