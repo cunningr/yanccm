@@ -10,7 +10,7 @@ setup(
         'ncservice.ncDeviceOps',
         'ncservice.ncDeviceOps.threaded',
         'view'],
-    version='0.0.1',
+    version='0.0.2',
     license='MIT',
     description='''YANCCM (pronounced yank'em) - Yet Another Network Configuration and Change Managment tool, is 
     multi-threaded configuration manger for network devices that leverages the NETCONF protocol''',
