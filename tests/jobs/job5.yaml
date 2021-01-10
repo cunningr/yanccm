@@ -1,0 +1,32 @@
+---
+name: Test-5-device
+description: Replace config deploy with commit-confirmed
+action: diff
+service:
+  - device: csr01
+    config: |
+      <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+      <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+        <hostname>csr01-test-5</hostname>
+        <interface>
+          <Loopback>
+            <name>105</name>
+            <description>hello-5</description>
+          </Loopback>
+        </interface>
+      </native>
+      </nc:config>
+  - device: csr02
+    config: |
+      <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+      <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+        <hostname>csr02-test-5</hostname>
+        <interface>
+          <Loopback>
+            <name>105</name>
+            <description>hello-5</description>
+          </Loopback>
+        </interface>
+      </native>
+      </nc:config>
+

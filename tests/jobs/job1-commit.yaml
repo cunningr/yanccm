@@ -1,0 +1,95 @@
+---
+name: Test-1-device
+description: Basic config deploy with commit-confirmed
+action: commit
+service:
+  - device: csr01
+    config:
+      - |
+          <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+          <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+            <hostname>csr01-test-1</hostname>
+            <interface>
+              <Loopback>
+                <name>101</name>
+                <description>hello-1</description>
+              </Loopback>
+            </interface>
+          </native>
+          </nc:config>
+      - |
+          <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+          <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+            <hostname>csr01-test-1</hostname>
+            <interface>
+              <Loopback>
+                <name>102</name>
+                <description>hello-2</description>
+              </Loopback>
+            </interface>
+          </native>
+          </nc:config>
+      - |
+          <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+          <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+          <ip>
+            <access-list>
+              <extended xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-acl" nc:operation="replace">
+                <name>MYACL</name>
+                <access-list-seq-rule>
+                  <sequence>110</sequence>
+                  <ace-rule>
+                    <action>permit</action>
+                    <protocol>ip</protocol>
+                    <ipv4-address>100.1.0.0</ipv4-address>
+                    <mask>0.0.0.255</mask>
+                    <dst-any/>
+                  </ace-rule>
+                </access-list-seq-rule>
+                <access-list-seq-rule>
+                  <sequence>120</sequence>
+                  <ace-rule>
+                  <action>permit</action>
+                  <protocol>ip</protocol>
+                  <ipv4-address>100.2.0.0</ipv4-address>
+                  <mask>0.0.0.255</mask>
+                  <dst-any/>
+                  </ace-rule>
+                  </access-list-seq-rule>
+              </extended>
+            </access-list>
+          </ip>
+          </native>
+          </nc:config>
+  - device: csr02
+    config:
+      - |
+          <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+          <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+            <hostname>csr02-test-1</hostname>
+            <interface>
+              <Loopback>
+                <name>101</name>
+                <description>hello-1</description>
+              </Loopback>
+            </interface>
+          </native>
+          </nc:config>
+#  - device: csr03
+#    config: |
+#      <nc:config xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0">
+#      <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+#        <hostname>newThree</hostname>
+#          <interface>
+#            <GigabitEthernet>
+#              <name>1</name>
+#              <shutdown/>
+#            </GigabitEthernet>
+#            <Loopback>
+#              <name>101</name>
+#              <description>hello-2</description>
+#            </Loopback>
+#          </interface>
+#      </native>
+#      </nc:config>
+
