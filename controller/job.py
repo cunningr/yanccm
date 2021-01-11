@@ -16,6 +16,7 @@ class JobFile:
     def add_args(_key, _subparsers):
         job = _subparsers.add_parser(_key, help='use yanccm job -h for help')
         job.add_argument('file', help='File containing yanccm Job definition')
+        job.add_argument('--action', help='Override the job action with diff|commit|commit-confirm')
         return job
 
     @staticmethod

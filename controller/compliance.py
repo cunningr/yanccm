@@ -24,8 +24,8 @@ class Compliance:
         compliance = _subparsers.add_parser(_key, help='use yanccm compliance -h for help')
         compliance.add_argument('--site', help='sub-command1 help')
         compliance.add_argument('--device', help='sub-command2 help')
-        compliance.add_argument('--baseline', help='sub-command2 help')
-        compliance.add_argument('--revert', help='sub-command2 help')
+        compliance.add_argument('--baseline', action='store_true', help='sub-command2 help')
+        compliance.add_argument('--revert', action='store_true', help='sub-command2 help')
         day0 = compliance.add_subparsers(help='sub-command help')
         day0 = ComplianceDay0.add_args('day0', day0)
         day0.set_defaults(func=ComplianceDay0)
@@ -59,7 +59,7 @@ class ComplianceDay0:
         day0 = _subparsers.add_parser(_key, help='use yanccm compliance day0 -h for help')
         day0.add_argument('--site', required=True, help='sub-command1 help')
         day0.add_argument('--device', help='sub-command2 help')
-        day0.add_argument('--commit', help='sub-command2 help')
+        day0.add_argument('--commit', action='store_true', help='sub-command2 help')
         return day0
 
     @staticmethod
