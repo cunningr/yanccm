@@ -8,7 +8,7 @@ In modern network operations it is desirable to have a Source of Truth (SoT) as 
 
 Although there are already many solutions for configuration management of network devices, they most commonly rely on interacting with a CLI and resulting unstructured data.  Tools such as Ansible, NAPALM, netmiko and nonir (to name a few) aim to solve some of the challenges of automating against traditional CLI by adding layers of abstraction and textFSM parsing to make different device versions and vendors 'look' as similar as possible.  Netconf as described in [RFC 6241](https://tools.ietf.org/html/rfc6241) is a next-generation management protocol intended to solve many of the issues plagued by such tools mentioned above.
 
-In summary, some of the key operational functions required for advanced configuration management are now be implemented 'on-box' using the stanards based NETCONF protocol, such as;
+In summary, some of the key operational functions required for advanced configuration management are now be implemented 'on-box' using the standards based NETCONF protocol, such as;
 
  * Configuration to ```candidate``` datastore
     * Validates configuration syntax without making changes operational
